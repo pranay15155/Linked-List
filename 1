@@ -1,0 +1,88 @@
+#include <bits/stdc++.h>
+using namespace std;
+
+#define ct cout 
+#define el "\n"
+#define pb push_back
+#define li long long int
+#define vec vector<li>
+#define sp " "
+
+
+
+class Node{
+public:
+    int data;
+    Node *next;
+
+public:
+    Node(int data1,Node *next1){  //2 argument constructor
+        data=data1;
+        next=next1;
+    }
+
+public:
+    Node(int data1){  //1 argument constructor
+        data=data1;
+        next=nullptr;
+    }
+
+};
+
+
+
+
+
+
+
+void pranay(){
+
+    vec arr={1,2,3,4};
+    Node a=Node(arr[0],NULL);
+    Node *b=&a;   
+    //here a is just an object ,,,& is used to provide address of object 'a' 
+    //To store address of Node a, we require a Node pointer hence we have created b
+    ct<<b<<el<<b->data<<el;
+
+    Node *y=new Node(arr[0],NULL);
+    ct<<y<<el;              //gives memory location where y node is stored
+    ct<<y->data<<el;        //gives data of node y
+
+//whatever i have written on line 41 and 42 to write in short we write in the form 
+//of line 52
+
+    Node z=Node(arr[1],NULL);
+    ct<<z.data<<sp<<z.next<<el;
+
+   // ct<<z<<el;               this will throw error because z is just an object
+   //which stores arr[1] unlike y , y is a pointer which points the memory
+   // location of an object which stores arr[0]  
+
+
+
+
+}
+
+
+
+
+int main()
+{
+ios_base::sync_with_stdio(false);cin.tie(NULL);cout.tie(NULL);
+#ifndef ONLINE_JUDGE
+    freopen("input.txt", "r", stdin);
+    freopen("output.txt", "w", stdout);
+#endif // ONLINE_JUDGE
+    int t;
+    cin >> t;
+    while (t--)
+    {
+      pranay();
+    }
+    return 0;
+}
+
+
+
+
+
