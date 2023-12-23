@@ -29,10 +29,35 @@ public:
 
 };
 
+Node * arr_to_linkedlist(vec v){
+    Node *head=new Node(v[0]);
+    Node *mover=head;
+    for(int i=1;i<v.size();i++){
+        Node *temp=new Node(v[i]);
+        mover->next=temp;
+        mover =temp;
+    }
+    return head;
+}
 
+void traversal(Node *head){
+    Node *temp=head;
+    while(temp!=NULL){
+        ct<<temp->data<<sp;
+        temp=temp->next;
+    }
+    ct<<el;
+}
 
-
-
+li length_of_ll(Node *head){
+    li length=0;
+    Node *temp=head;
+    while(temp!=NULL){
+        temp=temp->next;
+        length++;
+    }
+    return length;
+}
 
 
 void pranay(){
@@ -48,8 +73,8 @@ void pranay(){
     ct<<y<<el;              //gives memory location where y node is stored
     ct<<y->data<<el;        //gives data of node y
 
-//whatever i have written on line 41 and 42 to write in short we write in the form 
-//of line 52
+//whatever i have written on line 66 and 67 to write in short we write in the form 
+//of line 72
 
     Node z=Node(arr[1],NULL);
     ct<<z.data<<sp<<z.next<<el;
@@ -58,10 +83,13 @@ void pranay(){
    //which stores arr[1] unlike y , y is a pointer which points the memory
    // location of an object which stores arr[0]  
 
-
-
-
+   Node *head=arr_to_linkedlist(arr);
+   // ct<<arr_to_linkedlist(arr)->data<<el;
+   traversal(head);
+   ct<<length_of_ll(head)<<el;
+   
 }
+
 
 
 
